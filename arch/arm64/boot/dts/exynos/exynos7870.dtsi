@@ -14,6 +14,18 @@
 	#address-cells = <2>;
 	#size-cells = <1>;
 
+        /*
+         * Non-upstreamable: dtbtool-exynos, the tool that merges this
+         * dtb into the final Device Tree image (DTBH), rejects a file
+         * missing these properties as "invalid size". Not a real
+         * devicetree binding, just a requirement of that tool needed
+         * to build a bootable image for a6lte because of Samsung stock
+         * bootloader behavior.
+         */
+        model_info-chip = <7870>;
+        model_info-hw_rev = <0>;
+        model_info-hw_rev_end = <255>;
+
 	interrupt-parent = <&gic>;
 
 	aliases {
